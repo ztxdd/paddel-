@@ -1,0 +1,57 @@
+
+/home/jetbot/codes/speed_test/myenv/lib/python3.7/site-packages/pkg_resources/__init__.py:121: DeprecationWarning: pkg_resources is deprecated as an API
+  warnings.warn("pkg_resources is deprecated as an API", DeprecationWarning)
+/home/jetbot/codes/speed_test/myenv/lib/python3.7/site-packages/pkg_resources/__init__.py:2870: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jetbot/codes/speed_test/myenv/lib/python3.7/site-packages/pkg_resources/__init__.py:2870: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+2023-03-22 17:59:35 PM - root - INFO -inferences: args:Namespace(img_file='demo.png', img_size=640, model_file='yolov7_tiny_300e_coco/model.pdmodel', params_file='yolov7_tiny_300e_coco/model.pdiparams', run_mode='trt_fp16')
+2023-03-22 17:59:35 PM - root - INFO -inferences: creating configs and predictor ...
+W0322 17:59:46.653234  6852 analysis_predictor.cc:1395] The one-time configuration of analysis predictor failed, which may be due to native predictor called first and its configurations taken effect.
+I0322 17:59:46.694759  6852 analysis_predictor.cc:1099] TensorRT subgraph engine is enabled
+[1m[35m--- Running analysis [ir_graph_build_pass][0m
+[1m[35m--- Running analysis [ir_analysis_pass][0m
+[32m--- Running IR pass [adaptive_pool2d_convert_global_pass][0m
+[32m--- Running IR pass [shuffle_channel_detect_pass][0m
+[32m--- Running IR pass [quant_conv2d_dequant_fuse_pass][0m
+[32m--- Running IR pass [delete_fill_constant_op_pass][0m
+[32m--- Running IR pass [delete_quant_dequant_op_pass][0m
+[32m--- Running IR pass [delete_quant_dequant_filter_op_pass][0m
+[32m--- Running IR pass [delete_weight_dequant_linear_op_pass][0m
+[32m--- Running IR pass [delete_quant_dequant_linear_op_pass][0m
+[32m--- Running IR pass [identity_scale_op_clean_pass][0m
+[32m--- Running IR pass [add_support_int8_pass][0m
+I0322 17:59:47.917531  6852 fuse_pass_base.cc:59] ---  detected 305 subgraphs
+[32m--- Running IR pass [simplify_with_basic_ops_pass][0m
+[32m--- Running IR pass [trt_embedding_eltwise_layernorm_fuse_pass][0m
+[32m--- Running IR pass [preln_embedding_eltwise_layernorm_fuse_pass][0m
+[32m--- Running IR pass [delete_c_identity_op_pass][0m
+[32m--- Running IR pass [trt_multihead_matmul_fuse_pass_v2][0m
+[32m--- Running IR pass [trt_multihead_matmul_fuse_pass_v3][0m
+[32m--- Running IR pass [vit_attention_fuse_pass][0m
+[32m--- Running IR pass [trt_skip_layernorm_fuse_pass][0m
+[32m--- Running IR pass [preln_skip_layernorm_fuse_pass][0m
+[32m--- Running IR pass [preln_residual_bias_fuse_pass][0m
+[32m--- Running IR pass [layernorm_shift_partition_fuse_pass][0m
+[32m--- Running IR pass [conv_bn_fuse_pass][0m
+I0322 17:59:48.282743  6852 fuse_pass_base.cc:59] ---  detected 55 subgraphs
+[32m--- Running IR pass [unsqueeze2_eltwise_fuse_pass][0m
+[32m--- Running IR pass [trt_squeeze2_matmul_fuse_pass][0m
+[32m--- Running IR pass [trt_flatten2_matmul_fuse_pass][0m
+[32m--- Running IR pass [trt_map_matmul_v2_to_mul_pass][0m
+[32m--- Running IR pass [trt_map_matmul_v2_to_matmul_pass][0m
+[32m--- Running IR pass [trt_map_matmul_to_mul_pass][0m
+[32m--- Running IR pass [fc_fuse_pass][0m
+[32m--- Running IR pass [conv_elementwise_add_fuse_pass][0m
+I0322 17:59:48.407490  6852 fuse_pass_base.cc:59] ---  detected 58 subgraphs
+[32m--- Running IR pass [remove_padding_recover_padding_pass][0m
+[32m--- Running IR pass [delete_remove_padding_recover_padding_pass][0m
+[32m--- Running IR pass [dense_fc_to_sparse_pass][0m
+[32m--- Running IR pass [dense_multihead_matmul_to_sparse_pass][0m
+[32m--- Running IR pass [constant_folding_pass][0m
+[32m--- Running IR pass [tensorrt_subgraph_pass][0m
+I0322 17:59:49.208983  6852 tensorrt_subgraph_pass.cc:244] ---  detect a sub-graph with 184 nodes
+I0322 17:59:49.294690  6852 tensorrt_subgraph_pass.cc:560] Prepare TRT engine (Optimize model structure, Select OP kernel etc). This process may cost a lot of time.
+I0322 17:59:53.899523  6852 engine.cc:119] Run Paddle-TRT FP16 mode
